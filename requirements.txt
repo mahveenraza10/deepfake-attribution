@@ -1,0 +1,22 @@
+# Pins that matter, with the reason. Install torch first, matched to your CUDA:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+torch>=2.4
+accelerate
+
+# >=4.57 for Qwen3-Omni. Verified against 5.16; run_vlm.py branches on the major
+# version where v5 renamed or moved things (see load() and infer()).
+transformers>=4.57
+
+qwen-omni-utils[decord]
+
+# librosa <0.11 is REQUIRED, not cosmetic. qwen_omni_utils pulls a clip's audio
+# track by handing librosa.load an audioread.ffdec.FFmpegAudioFile; librosa 0.11
+# dropped that code path, so a current librosa fails every .mp4 with
+# "TypeError: Invalid file". audioread is no longer a librosa dependency either,
+# so it has to be requested by name.
+librosa<0.11
+audioread
+
+soundfile
+av

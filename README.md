@@ -1,5 +1,8 @@
 # Attribution correctness on FakeAVCeleb
 
+Mahveen Raza, Independent Researcher, Toronto, Ontario, Canada 
+Syed Raza Bashir, Scientific Research-AI Lab, Toronto, Ontario, Canada
+
 When a deepfake detector correctly flags a fake, does it also cite the *right* evidence?
 
 Prediction accuracy can flatter a detector, because a model can be right about
